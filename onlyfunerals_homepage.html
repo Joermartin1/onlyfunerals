@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OnlyFunerals.ai</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#1A2744;
+  --navy-deep:#0F1A35;
+  --gold:#B8922A;
+  --gold-light:#D4A843;
+  --cream:#F7F3EC;
+  --cream-dark:#EDE8DF;
+  --text:#2C2410;
+  --text-mid:#5A4F3C;
+  --text-muted:#8C7D68;
+  --white:#FDFCF9;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);line-height:1.6;font-size:16px}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{background:var(--white);border-bottom:1px solid var(--cream-dark);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:100}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--navy);letter-spacing:-0.02em}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:32px;font-size:14px;font-weight:400;color:var(--text-mid)}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{background:var(--navy);color:var(--white)!important;padding:10px 22px;border-radius:3px;font-size:14px;font-weight:500;transition:background .2s}
+.nav-cta:hover{background:var(--navy-deep)}
+
+/* HERO */
+.hero{background:var(--navy);color:var(--white);padding:100px 10vw 90px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;min-height:520px}
+.hero-text{}
+.hero-eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);font-weight:500;margin-bottom:20px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,4vw,56px);font-weight:500;line-height:1.12;letter-spacing:-0.02em;margin-bottom:24px}
+.hero h1 em{font-style:italic;color:var(--gold-light)}
+.hero-sub{font-size:17px;font-weight:300;color:rgba(255,255,255,0.78);line-height:1.7;max-width:420px;margin-bottom:36px}
+.hero-note{font-size:12px;color:rgba(255,255,255,0.45);margin-top:14px;font-style:italic}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--white);padding:14px 28px;border-radius:3px;font-size:15px;font-weight:500;border:none;cursor:pointer;transition:background .2s;font-family:'DM Sans',sans-serif}
+.btn-primary:hover{background:var(--gold-light)}
+.btn-outline{background:transparent;color:var(--white);padding:14px 28px;border-radius:3px;font-size:15px;font-weight:400;border:1px solid rgba(255,255,255,0.3);cursor:pointer;transition:border-color .2s;font-family:'DM Sans',sans-serif}
+.btn-outline:hover{border-color:rgba(255,255,255,0.6)}
+
+/* HERO IMAGE PLACEHOLDER */
+.hero-image{border-radius:4px;overflow:hidden;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.img-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:500;margin-top:8px}
+.img-icon{font-size:36px;opacity:.3}
+
+/* PATH SELECTOR */
+.paths{padding:64px 10vw;background:var(--cream);border-bottom:1px solid var(--cream-dark)}
+.paths-label{text-align:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);font-weight:500;margin-bottom:40px}
+.path-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.path-card{background:var(--white);border:1px solid var(--cream-dark);border-radius:3px;padding:32px 28px;transition:border-color .2s,box-shadow .2s;cursor:pointer}
+.path-card:hover{border-color:var(--gold);box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+.path-card-num{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);font-weight:500;letter-spacing:.08em;margin-bottom:12px}
+.path-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.2}
+.path-card p{font-size:14px;color:var(--text-muted);line-height:1.6}
+.path-arrow{margin-top:20px;font-size:20px;color:var(--gold);display:block}
+
+/* HOW IT WORKS */
+.how{padding:80px 10vw;background:var(--white)}
+.section-eyebrow{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3vw,42px);font-weight:500;color:var(--navy);line-height:1.2;letter-spacing:-0.01em;margin-bottom:16px}
+.section-sub{font-size:16px;color:var(--text-mid);max-width:520px;line-height:1.7;margin-bottom:56px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:40px}
+.step{}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:48px;color:var(--cream-dark);font-weight:600;line-height:1;margin-bottom:14px}
+.step h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.step p{font-size:14px;color:var(--text-muted);line-height:1.7}
+.model-note{background:var(--cream);border-left:3px solid var(--gold);padding:18px 24px;border-radius:0 3px 3px 0;font-size:14px;color:var(--text-mid);max-width:680px;font-style:italic}
+
+/* PRICING PREVIEW */
+.pricing{padding:80px 10vw;background:var(--navy);color:var(--white)}
+.pricing .section-eyebrow{color:var(--gold-light)}
+.pricing .section-title{color:var(--white)}
+.pricing .section-sub{color:rgba(255,255,255,0.65)}
+.cost-table{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;margin-top:0}
+.cost-row-header{display:contents}
+.cost-cell{background:rgba(15,26,53,0.8);padding:22px 24px}
+.cost-cell.head{background:rgba(255,255,255,0.05);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);font-weight:500}
+.cost-cell.label{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--white)}
+.cost-cell.range{font-size:22px;font-weight:500;color:var(--gold-light);font-family:'Cormorant Garamond',serif}
+.cost-cell.note{font-size:13px;color:rgba(255,255,255,.5)}
+.pricing-source{font-size:12px;color:rgba(255,255,255,.3);margin-top:20px;font-style:italic}
+
+/* SOCIAL PROOF */
+.proof{padding:80px 10vw;background:var(--cream)}
+.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.testimonial{background:var(--white);border-radius:3px;padding:32px 28px;border:1px solid var(--cream-dark)}
+.testimonial-quote{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;font-style:italic;color:var(--navy);line-height:1.55;margin-bottom:20px}
+.testimonial-attr{font-size:13px;color:var(--text-muted);font-weight:500}
+.testimonial-attr span{color:var(--gold);margin-right:4px}
+
+/* PROVIDER IMAGE SECTION */
+.vetting{padding:80px 10vw;background:var(--white);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.vetting-image{background:var(--cream);border:1px solid var(--cream-dark);border-radius:3px;aspect-ratio:5/4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.vetting-text .section-sub{margin-bottom:32px}
+.check-list{display:flex;flex-direction:column;gap:14px}
+.check-item{display:flex;align-items:flex-start;gap:14px;font-size:15px;color:var(--text-mid)}
+.check-dot{width:22px;height:22px;min-width:22px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.check-dot::after{content:'✓';color:var(--white);font-size:11px;font-weight:600}
+
+/* PRE-PLAN CTA */
+.preplan{padding:80px 10vw;background:var(--cream-dark);text-align:center}
+.preplan .section-title{margin:0 auto 16px}
+.preplan .section-sub{margin:0 auto 36px;text-align:center}
+.preplan-note{font-size:12px;color:var(--text-muted);margin-top:12px;font-style:italic}
+
+/* RESOURCES */
+.resources{padding:80px 10vw;background:var(--white)}
+.articles{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.article{border-top:2px solid var(--cream-dark);padding:24px 0 0}
+.article:first-child{border-top-color:var(--gold)}
+.article-cat{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);font-weight:500;margin-bottom:10px}
+.article h4{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--navy);line-height:1.3;margin-bottom:8px}
+.article p{font-size:13px;color:var(--text-muted);line-height:1.6}
+.article-link{display:inline-block;margin-top:16px;font-size:13px;font-weight:500;color:var(--gold);border-bottom:1px solid var(--gold)}
+
+/* FOOTER */
+footer{background:var(--navy-deep);color:rgba(255,255,255,.55);padding:48px 10vw;font-size:13px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--white);margin-bottom:12px}
+.footer-logo span{color:var(--gold-light)}
+.footer-desc{font-size:13px;line-height:1.7;max-width:240px}
+.footer-col h5{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);font-weight:500;margin-bottom:14px}
+.footer-col a{display:block;margin-bottom:8px;color:rgba(255,255,255,.55);transition:color .2s}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;font-size:12px;line-height:1.7}
+
+/* IMAGE PLACEHOLDER SHARED */
+.img-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:rgba(0,0,0,.25)}
+.img-ph-dark{color:rgba(255,255,255,.25)}
+.img-ph svg{opacity:.4}
+.img-ph-name{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-top:4px}
+.img-ph-dim{font-size:10px;opacity:.6}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">OnlyFunerals<span>.ai</span></div>
+  <div class="nav-links">
+    <a href="#">How It Works</a>
+    <a href="#">Compare Providers</a>
+    <a href="#">Pre-Planning</a>
+    <a href="#">Resources</a>
+    <a href="#" style="color:var(--text-muted);font-size:13px">For Funeral Homes</a>
+  </div>
+  <a href="#" class="nav-cta">Get Started</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Transparent. Guided. Free for Families.</div>
+    <h1>Funeral planning shouldn't feel like a <em>negotiation.</em></h1>
+    <p class="hero-sub">Real pricing, vetted providers, and a guided process for families who deserve better than the industry has given them.</p>
+    <div class="hero-actions">
+      <button class="btn-primary">I need help right now</button>
+      <button class="btn-outline">I'm planning ahead</button>
+    </div>
+    <p class="hero-note">Free for families. No sales calls without your permission. We never sell your data.</p>
+  </div>
+  <div class="hero-image">
+    <!-- IMAGE 1: HERO -->
+    <div class="img-ph img-ph-dark" style="width:100%;height:100%;justify-content:center">
+      <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <div class="img-ph-name img-ph-dark" style="color:rgba(255,255,255,.35)">IMAGE 1 — HERO</div>
+      <div class="img-ph-dim" style="color:rgba(255,255,255,.2)">1200 × 900px — warm, natural light</div>
+    </div>
+  </div>
+</section>
+
+<!-- PATH SELECTOR -->
+<section class="paths">
+  <p class="paths-label">How can we help you today?</p>
+  <div class="path-cards">
+    <div class="path-card">
+      <div class="path-card-num">01</div>
+      <h3>Someone just died</h3>
+      <p>You need help now. We'll match you with vetted providers and walk you through what happens next — step by step.</p>
+      <span class="path-arrow">→</span>
+    </div>
+    <div class="path-card">
+      <div class="path-card-num">02</div>
+      <h3>Planning for a parent</h3>
+      <p>Get honest pricing in your area and understand your options before you're in the room with a funeral director.</p>
+      <span class="path-arrow">→</span>
+    </div>
+    <div class="path-card">
+      <div class="path-card-num">03</div>
+      <h3>Planning for myself</h3>
+      <p>Give your family a gift they'll never have to ask for. Document your wishes and share them whenever you're ready.</p>
+      <span class="path-arrow">→</span>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="section-eyebrow">How It Works</div>
+  <h2 class="section-title">Simple. Transparent.<br>On your terms.</h2>
+  <p class="section-sub">Three steps. No surprises. No one contacts you without your permission.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h4>Tell us what you need</h4>
+      <p>A short guided intake: service type, location, timing, and what matters most. One question at a time. Takes under three minutes.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h4>We match you with vetted providers</h4>
+      <p>Every provider in our network has been verified for licensure, standing, and standards. We surface real pricing where providers will share it.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h4>You choose who to contact</h4>
+      <p>No one calls you without permission. You decide whether you reach out to them — or they reach out to you, and when.</p>
+    </div>
+  </div>
+  <div class="model-note">How we make money: Funeral homes pay us a fee when a family chooses to contact them. That fee never changes what you see, what you pay, or who we recommend.</div>
+</section>
+
+<!-- PRICING PREVIEW -->
+<section class="pricing">
+  <div class="section-eyebrow">Cost Transparency</div>
+  <h2 class="section-title">What a funeral actually costs in America</h2>
+  <p class="section-sub" style="margin-bottom:40px">Most families make a $10,000 decision in 24 hours with no prior research. Here's what fair looks like.</p>
+  <div class="cost-table">
+    <div class="cost-cell head">Service Type</div>
+    <div class="cost-cell head">National Average</div>
+    <div class="cost-cell head">What's Typically Included</div>
+
+    <div class="cost-cell label">Direct Cremation</div>
+    <div class="cost-cell range">$800 – $2,500</div>
+    <div class="cost-cell note">Transportation, cremation, basic urn. No ceremony required.</div>
+
+    <div class="cost-cell label">Graveside Service</div>
+    <div class="cost-cell range">$4,000 – $7,000</div>
+    <div class="cost-cell note">Brief ceremony at cemetery. Casket, burial, minimal staff.</div>
+
+    <div class="cost-cell label">Traditional Burial</div>
+    <div class="cost-cell range">$9,000 – $15,000</div>
+    <div class="cost-cell note">Viewing, funeral, burial, casket, plot. Most common upsell scenario.</div>
+  </div>
+  <p class="pricing-source">Source: NFDA 2024 survey data. Costs vary significantly by geography and provider.</p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="proof">
+  <div class="section-eyebrow">What Families Say</div>
+  <h2 class="section-title">They deserved better.<br>So do you.</h2>
+  <div class="testimonials">
+    <div class="testimonial">
+      <p class="testimonial-quote">"I had no idea what was reasonable. This site gave me the confidence to push back on a $4,200 casket I didn't need. We saved over $3,000."</p>
+      <div class="testimonial-attr"><span>—</span> Sarah M., Texas</div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-quote">"My husband died on a Tuesday. I found this at 1am. By Wednesday morning I had spoken with two providers who weren't trying to sell me anything."</p>
+      <div class="testimonial-attr"><span>—</span> Renée K., Ohio</div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-quote">"I'm 64. I did this so my kids never have to have the conversation I had when Mom died. Took 20 minutes. Worth every one."</p>
+      <div class="testimonial-attr"><span>—</span> David H., Oregon</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVIDER VETTING -->
+<section class="vetting">
+  <div class="vetting-image">
+    <!-- IMAGE 2: VETTING / TRUST -->
+    <div class="img-ph" style="width:100%;height:100%;justify-content:center">
+      <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <div class="img-ph-name" style="color:rgba(0,0,0,.3)">IMAGE 2 — TRUST</div>
+      <div class="img-ph-dim">900 × 720px — quiet interior</div>
+    </div>
+  </div>
+  <div class="vetting-text">
+    <div class="section-eyebrow">Provider Standards</div>
+    <h2 class="section-title">Providers who believe families deserve better</h2>
+    <p class="section-sub">Every provider in our network meets a defined standard — not just self-reported. We check licensure, complaints, and conduct before anyone receives a family referral.</p>
+    <div class="check-list">
+      <div class="check-item"><div class="check-dot"></div><span>State licensure verified with regulatory board</span></div>
+      <div class="check-item"><div class="check-dot"></div><span>BBB standing and public complaint history reviewed</span></div>
+      <div class="check-item"><div class="check-dot"></div><span>Signed conduct agreement covering pricing disclosure and family communication</span></div>
+      <div class="check-item"><div class="check-dot"></div><span>Removed immediately if a family complaint is substantiated</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRE-PLAN CTA BAND -->
+<section class="preplan">
+  <div class="section-eyebrow" style="text-align:center">Pre-Planning</div>
+  <h2 class="section-title" style="max-width:560px">Your family should never have to figure this out in 24 hours.</h2>
+  <p class="section-sub" style="max-width:480px;color:var(--text-mid)">Start a free planning document today. Document your wishes, save your choices, and share it with family whenever you're ready.</p>
+  <button class="btn-primary" style="font-size:16px;padding:16px 36px">Start free — no payment required</button>
+  <p class="preplan-note">No sales calls. No subscription. Your document belongs to you.</p>
+</section>
+
+<!-- RESOURCES -->
+<section class="resources">
+  <div class="section-eyebrow">Guides & Resources</div>
+  <h2 class="section-title">What to do when someone dies</h2>
+  <p class="section-sub" style="margin-bottom:0">Practical, plain-language guidance for the decisions that can't wait.</p>
+  <div class="articles">
+    <div class="article">
+      <div class="article-cat">At-Need</div>
+      <h4>What to do in the first 24 hours after a death</h4>
+      <p>A step-by-step guide to the immediate decisions, who to call, and what can wait.</p>
+      <a href="#" class="article-link">Read guide →</a>
+    </div>
+    <div class="article">
+      <div class="article-cat">Consumer Rights</div>
+      <h4>What the FTC Funeral Rule means for your family</h4>
+      <p>Since 1984, funeral homes have been legally required to give you pricing before you commit. Most don't mention it.</p>
+      <a href="#" class="article-link">Read guide →</a>
+    </div>
+    <div class="article">
+      <div class="article-cat">Cost</div>
+      <h4>What you do not have to buy</h4>
+      <p>Embalming, casket upgrades, vaults — understand which services are legally optional before you're in that room.</p>
+      <a href="#" class="article-link">Read guide →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">OnlyFunerals<span>.ai</span></div>
+      <p class="footer-desc">Free for families. Honest pricing. Vetted providers. A guided process for one of the hardest decisions you'll make.</p>
+    </div>
+    <div class="footer-col">
+      <h5>For Families</h5>
+      <a href="#">How It Works</a>
+      <a href="#">Compare Providers</a>
+      <a href="#">Pre-Planning</a>
+      <a href="#">Pricing Guide</a>
+      <a href="#">Resources</a>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="#">About</a>
+      <a href="#">Our Standards</a>
+      <a href="#">Trust & Safety</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h5>For Providers</h5>
+      <a href="#">Partner With Us</a>
+      <a href="#">Provider Standards</a>
+      <a href="#">Apply to Join</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <strong style="color:rgba(255,255,255,.65)">OnlyFunerals.ai is free for families.</strong> Funeral homes pay a fee when a family chooses to contact them. We never sell your contact information to third parties without your explicit permission.<br><br>
+    © 2025 OnlyFunerals.ai &nbsp;·&nbsp; <a href="#" style="color:rgba(255,255,255,.4)">Privacy Policy</a> &nbsp;·&nbsp; <a href="#" style="color:rgba(255,255,255,.4)">Terms</a> &nbsp;·&nbsp; <a href="#" style="color:rgba(255,255,255,.4)">Business Model Disclosure</a>
+  </div>
+</footer>
+
+</body>
+</html>
